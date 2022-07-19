@@ -1,30 +1,31 @@
 import { Meta, Story } from "@storybook/addon-docs/blocks";
-import Breadcrumbs from "./Breadcrumbs";
+import { Breadcrumb, Crumb } from "./Breadcrumbs";
 
 <Meta
-  title="Breadcrumbs"
-  component={Breadcrumbs}
+  title="Breadcrumb"
+  component={Breadcrumb}
   argTypes={{
-    value: {
+    crumb: {
       control: {
-        type: "number",
-        min: 0,
-        max: 100,
-      },
-    },
-    size: {
-      control: {
-        type: "select",
-        options: ["small", "medium", "large"],
+        type: "text",
       },
     },
   }}
 />
 
-export const Template = (args) => <Breadcrumbs {...args} />;
+export const Template = (args) => {
+  return (
+    <Breadcrumbs>
+      <Crumb href={"home"}>Home</Crumb>
+      <Crumb href={"living"}>Living Room</Crumb>
+      <Crumb href={"couches"}>Couches</Crumb>
+      <Crumb href={"sectionals"}>Sectionals</Crumb>
+    </Breadcrumbs>
+  );
+};
 
 # Breadcrumbs
 
-<Story name="Default" args={{ value: 50, size: "medium" }}>
+<Story name="component" args={{ href: "link", size: "medium" }}>
   {Template.bind({})}
 </Story>
