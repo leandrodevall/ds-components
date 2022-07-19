@@ -1,12 +1,12 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
-import Select from './Select';
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Select from "./Select";
 
 <Meta title="Select" component={Select} />
 
 # Select
 
 export const ManagedSelect = () => {
-  const [value, setValue] = React.useState('newest');
+  const [value, setValue] = React.useState("newest");
   return (
     <Select
       label="Sort"
@@ -20,6 +20,6 @@ export const ManagedSelect = () => {
   );
 };
 
-<Story name="Default">
+<Story name="Component in progress">
   <ManagedSelect />
 </Story>
