@@ -1,0 +1,39 @@
+import { Meta, Story } from "@storybook/addon-docs/blocks";
+import Alert from "./Alert";
+
+<Meta
+  title="Alert"
+  component={Alert}
+  argTypes={{
+    showAlert: {
+      control: {
+        type: "boolean",
+      },
+    },
+    types: {
+      control: {
+        type: "select",
+        options: ["danger", "success", "info", "warning"],
+      },
+    },
+    text: {
+      control: {
+        type: "text",
+      },
+    },
+  }}
+/>
+
+export const Template = (args) => <Alert {...args} />;
+
+# Alert
+
+<Story
+  name="Default"
+  args={{
+    types: "success",
+    text: "Warning! Indicates a warning that might need attention.",
+  }}
+>
+  {Template.bind({})}
+</Story>
